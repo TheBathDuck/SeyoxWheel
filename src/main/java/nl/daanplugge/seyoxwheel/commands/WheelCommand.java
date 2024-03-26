@@ -36,7 +36,7 @@ public class WheelCommand extends BaseCommand implements Listener {
 
     @Default("open")
     public void rotate(Player player) {
-        if(WheelPlugin.getInstance().getWheelcoinItems().values().size() < 8) {
+        if (WheelPlugin.getInstance().getWheelcoinItems().values().size() < 8) {
             player.sendMessage(ChatUtils.parse("<red>Er zijn momenteel niet genoeg items beschikbaar."));
             return;
         }

@@ -10,7 +10,6 @@ import org.jetbrains.annotations.NotNull;
 
 public class WheelLoader implements PluginLoader {
 
-
     @Override
     public void classloader(@NotNull PluginClasspathBuilder pluginClasspathBuilder) {
         MavenLibraryResolver libraryResolver = new MavenLibraryResolver();

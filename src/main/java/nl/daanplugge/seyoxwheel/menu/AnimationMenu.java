@@ -4,7 +4,6 @@ import dev.triumphteam.gui.builder.item.ItemBuilder;
 import dev.triumphteam.gui.guis.Gui;
 import dev.triumphteam.gui.guis.GuiItem;
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.minimessage.MiniMessage;
 import nl.daanplugge.seyoxwheel.WheelPlugin;
 import nl.daanplugge.seyoxwheel.utils.ChatUtils;
 import org.bukkit.Material;
@@ -14,7 +13,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -41,7 +39,7 @@ public class AnimationMenu extends BukkitRunnable {
                 .stream()
                 .toList());
 
-        for(int i = 0; i <= 7; i++) {
+        for (int i = 0; i <= 7; i++) {
             Collections.shuffle(stacks);
             ItemStack item = stacks.get(0);
             selectedItems.add(item);
@@ -60,7 +58,7 @@ public class AnimationMenu extends BukkitRunnable {
         player.playSound(player, Sound.BLOCK_NOTE_BLOCK_PLING, 1, pitch);
 
         pitch += 0.1f;
-        if(pitch >= 2f) pitch = 2f;
+        if (pitch >= 2f) pitch = 2f;
 
         gui.setItem(3, 5, ItemBuilder.from(Material.NETHER_STAR).name(ChatUtils.parse("<gradient:gold:yellow>/\\ Winnend item /\\")).asGuiItem());
 
@@ -78,7 +76,7 @@ public class AnimationMenu extends BukkitRunnable {
         gui.update();
         gui.open(player);
 
-        if(timer >= 35) {
+        if (timer >= 35) {
             this.cancel();
             populateMenu();
 
@@ -93,7 +91,7 @@ public class AnimationMenu extends BukkitRunnable {
 
     private void populateMenu() {
         GuiItem item = ItemBuilder.from(Material.BLACK_STAINED_GLASS_PANE).name(Component.empty()).asGuiItem();
-        for(int i = 0; i < (gui.getRows() * 9); i++) {
+        for (int i = 0; i < (gui.getRows() * 9); i++) {
             this.gui.setItem(i, item);
         }
         gui.update();
