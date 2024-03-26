@@ -1,0 +1,5 @@
+name: "SeyoxWheel"
+version: "1.0"
+main: "nl.daanplugge.seyoxwheel.WheelPlugin"
+loader: "nl.daanplugge.seyoxwheel.WheelLoader"
+api-version: "1.20"
